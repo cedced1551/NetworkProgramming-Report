@@ -15,10 +15,10 @@ int main(int argc, char *argv[])
 	FD_ZERO(&reads);
 	FD_SET(0, &reads); // 0 is standard input(console)
 
-	/*
-	timeout.tv_sec=5;
-	timeout.tv_usec=5000;
-	*/
+	
+	timeout.tv_sec=5; // 이부분 주석 지움
+	timeout.tv_usec=5000; 
+	
 
 	while(1)
 	{
@@ -44,6 +44,7 @@ int main(int argc, char *argv[])
 				printf("message from console: %s", buf);
 			}
 		}
+		printf(">result: %d\n", result); //이부분은 추가했는데 바뀐게 없어서 걍,,다시 주석 처리함 
 	}
 	return 0;
 }
